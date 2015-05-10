@@ -1,0 +1,19 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainappLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:background="@drawable/idli">
+    <EditText android:id="@+id/edit_message"
+       style="@style/HomeScreenLayoutStyle"
+        android:hint="@string/edit_message"
+        android:paddingLeft="50dp"
+        android:paddingRight="50dp"
+        android:maxLength="5"/>
+    <Button
+        style="@style/HomeScreenLayoutStyle"
+        android:text="@string/button_send"
+        android:onClick="getRestaurantsByZipCode"
+        android:id="@+id/goButton"/>
+</LinearLayout>

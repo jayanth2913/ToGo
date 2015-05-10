@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">ToGo</string>
+    <string name="edit_message">Enter Zip Code</string>
+    <string name="button_send">Go</string>
+    <string name="action_settings">Settings</string>
+    <string name ="title_main_activity">Search By ZipCode</string>
+    <string name="title_activity_display_restaurants_view">DisplayRestaurantsViewActivity</string>
+
+    <string name="hello_world">Hello world!</string>
+</resources>
