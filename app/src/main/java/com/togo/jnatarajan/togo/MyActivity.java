@@ -1,9 +1,8 @@
 package com.togo.jnatarajan.togo;
-
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -11,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.togo.jnatarajan.togo.R;
 
 public class MyActivity extends ActionBarActivity {
 
@@ -54,7 +54,7 @@ public class MyActivity extends ActionBarActivity {
         EditText editText = (EditText) findViewById(R.id.edit_message);
         String message = editText.getText().toString();
         if(message==null || message.length()<5){
-            Toast.makeText(this,"Please Enter a Five Digit ZipCode",Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Please Enter a Five Digit ZipCode", Toast.LENGTH_LONG).show();
         }else {
             intent.putExtra(EXTRA_MESSAGE, message);
             startActivity(intent);

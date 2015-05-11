@@ -1,23 +1,20 @@
 package com.togo.jnatarajan.togo;
-
 import android.app.Activity;
-import android.app.ListActivity;
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.support.v7.internal.view.menu.ListMenuItemView;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.Window;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import com.togo.jnatarajan.togo.MyActivity;
+import com.togo.jnatarajan.togo.R;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 
 public class DisplayRestaurantsViewActivity extends Activity {
     private Map<String,List<String>> restaurantsMapByZipCode;
@@ -49,12 +46,15 @@ public class DisplayRestaurantsViewActivity extends Activity {
         String zipCode = intent.getStringExtra(MyActivity.EXTRA_MESSAGE);
         initMap(zipCode);
         TextView text = (TextView)findViewById(R.id.resultListByZip);
-        text.setText("Search Results For "+zipCode);
-        List<String> restaurantResults = restaurantsMapByZipCode.get(zipCode);
-        ListView listview = (ListView) findViewById(R.id.restaurantList);
-        listview.setContentDescription("Search Results For"+zipCode);
-        final ArrayAdapter adapter = new ArrayAdapter(this,android.R.layout.simple_list_item_1, android.R.id.text1,restaurantResults);
-        listview.setAdapter(adapter);
+        text.setText("Search Results For " + zipCode);
+            List<String> restaurantResults = restaurantsMapByZipCode.get(zipCode);
+            ListView listview = (ListView) findViewById(R.id.restaurantList);
+            listview.setContentDescription("Search Results For" + zipCode);
+            final ArrayAdapter adapter = new ArrayAdapter(this,android.R.layout.simple_list_item_1, android.R.id.text1,restaurantResults);
+            listview.setAdapter(adapter);
+            YelpApi yelpHelper =new YelpApi();
+            yelpHelper.execute(new String[]{"indian restaurants",zipCode});
+
     }
     /*
     This map should be populated with the actual list of restaurants by making a query with the zipcode to a DB or external service to retrieve restaurants.
